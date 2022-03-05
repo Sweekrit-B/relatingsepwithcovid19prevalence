@@ -1,0 +1,19 @@
+Period 2 - Correlation and P value,r,p
+b,1,0
+GeneralGovt ,-0.2075,0.12852645
+Protection ,-0.2116,0.120957274
+PublicAssistance,-0.2743,0.042716651
+Health,-0.2422,0.074855237
+RoadsFacilitiesSanitation,-0.1037,0.451037736
+GDP,0.0568,0.680364996
+MedianHouseholdIncome,0.2252,0.098314308
+NetTaxableAssessed,-0.1169,0.395546772
+Felony Probation (2018),-0.2212,0.104553118
+Incarcerated from County (2018),-0.1809,0.186261392
+Violent Crimes (2018),-0.0229,0.867914611
+Property Crimes (2018),-0.0138,0.920370924
+Housing Units: Single Family (January 2019),-0.1872,0.171030917
+Housing Units: Multi-Family (January 2019),-0.2177,0.110267246
+Housing Units: Mobile Homes (January 2019),-0.2187,0.108613912
+Migration,0.1344,0.327781508
+Population2020,0.3396,0.01120107
