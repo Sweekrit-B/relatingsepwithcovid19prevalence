@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 
 #California Vaccination Relations
 data_list = []
+data_column_list = ["GDP", "Net Taxable Assessed Value", "Property Taxes", "Sanitation Taxes", "Total Wages"]
 data = pd.read_excel("1_vaccinationratiodata_CA.xlsx")
 x1 = list(data['population_to_GDP'])
 data_list.append(x1)
@@ -25,23 +26,26 @@ for element in data_list:
     r, p = 0, 0
     r, p = stats.pearsonr(element, y)
     print("Column " + str(data_list.index(element)) + " to dose correlation: " + str(round(r, 10)) + ". " + "Column " + str(data_list.index(element)) + " to dose p-value: " + str(round(p, 20)))
-    plt.scatter(element, y, s=100, edgecolors="black")
-    plt.title("Column " + str(data_list.index(element)) + " ratio vs. population-dose ratio (California)")
+    plt.scatter(element, y, edgecolors="black")
+    plt.title("Per Capita " + str(data_column_list[data_list.index(element)]) + "  v. Per Capita Vaccination Doses (CA)")
+    plt.xlabel("Per Capita " + str(data_column_list[data_list.index(element)]) + " (CA)")
+    plt.ylabel("Per Capita Vaccination Doses (CA)")
     plt.show()
 
 #Oregon Vaccination Relations
 print()
 print("Oregon Correlation Values (mid GDP representation, rank 25)")
-
 data1 = pd.read_excel("1_vaccinationratiodata_OR.xlsx")
 a = list(data1['population_to_GDP'])
 b = list(data1['population_to_doses'])
 r1, p1 = 0, 0
 r1, p1 = stats.pearsonr(a, b)
-print("population-GDP ratio to population-dose ratio correlation: " + str(round(r1, 10)) + ". GDP to dose p-value: " + str(round(p1, 20)))
+print("Per capita GDP ratio to per capita vaccination doses correlation: " + str(round(r1, 10)) + ". GDP to dose p-value: " + str(round(p1, 20)))
 plt.scatter(a, b, s=100, edgecolors="black")
-plt.title("population-GDP ratio vs. population-dose ratio (Oregon)")
-plt.show
+plt.title("Per Capita GDP v. Per Capita Vaccination Doses (OR)")
+plt.xlabel("Per Capita GDP (OR)")
+plt.ylabel("Per Capita Vaccination Doses (OR)")
+plt.show()
 
 #Vermont Vaccination Relations
 print()
@@ -52,10 +56,12 @@ m = list(data2['population_to_GDP'])
 n = list(data2['population_to_doses'])
 r2, p2 = 0, 0
 r2, p2 = stats.pearsonr(m, n)
-print("population-GDP ratio to population-dose ratio correlation: " + str(round(r2, 10)) + ". GDP to dose p-value: " + str(round(p2, 20)))
+print("Per capita GDP ratio to per capita vaccination doses correlation: " + str(round(r2, 10)) + ". GDP to dose p-value: " + str(round(p2, 20)))
 plt.scatter(m, n, s=100, edgecolors="black")
-plt.title("population-GDP ratio vs. population-dose ratio (Vermont)")
-plt.show
+plt.title("Per Capita GDP v. Per Capita Vaccination Doses (VT)")
+plt.xlabel("Per Capita GDP (VT)")
+plt.ylabel("Per Capita Vaccination Doses (VT)")
+plt.show()
 
 '''r, p = stats.pearsonr(x, y)
 print(round(r, 4))
